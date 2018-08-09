@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+
+:root {
+  --grey: rgba(0, 0, 0, 0.6);
+}
+
+/* Selectores Base */
+
+html,
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  margin: 0;
+  max-width: 1000px;
+  margin: 10% auto 0 auto;
+  /* min-height: 100vh; */
+  line-height: 1.5;
+  padding: 0 30px;
+}
+
+
+h1,
+header #description {
+  text-align: center;
+  margin: 0;
+}
+
+#description {
+  font-size: .8rem;
+}
+
+a,
+a:visited
+a:focus {
+  text-decoration: none;
+  color: var(--grey);
+  outline-style: none;
+}
+
+footer {
+  grid-area: footer;
+  font-size: .7rem;
+  align-self: end;
+  /* grid-column: 2 / span 1; */
+  padding-bottom: 20px;
+  
+}
+
+footer > span {
+  color: var(--grey);
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li > a {
+  text-decoration: underline;
+}
+
+.recommendations {
+  text-align: left;
+  padding-left: 25px;
+  margin: 0;
+}
+
+
+/* Columnas Principales */
+
+.container {
+  display: grid;
+  grid-auto-flow: columns;
+  grid-gap: 30px;
+  text-align: center;
+  grid-template-areas: 
+  'col-a  header'
+  'col-a  content'
+  'footer footer';
+  width: 100%;
+  /* padding: 20px 20px; */
+}
+
+.header {
+  grid-area: header;
+  margin-bottom: 1rem;
+}
+
+.content {
+  grid-area: content;
+  grid-gap: 20px;
+  min-height: 45vh;
+}
+
+.content p {
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+
+.col {
+  display: grid;
+  background: #FAFAFA;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.05);
+  min-width: 150px;
+  border-radius: 10px;
+  align-self: start;
+}
+
+.col-a {
+  padding: 5px 20px;
+  grid-area: col-a;
+  grid-row-start: 2;
+}
+
+.social {
+  margin: 20px 0;
+}
+
+.social > p {
+  margin: 5px;
+}
+
+.content a {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .container {
+    grid-template-areas: 
+      'header'
+      'content'
+      'col-a'
+      'footer';
+  }
+
+  footer {
+    grid-column-start: 1;
+  }
+
+  .col-a {
+    grid-row-start: -3;
+  }
+}
+
+
+
+
+
+
+
+

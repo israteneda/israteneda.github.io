@@ -1,0 +1,13 @@
+{{ if not ( eq .Section "page" ) }}
+<div class='entry-meta'>
+  {{ partial "entry/meta/posted-on" . }}
+  {{ partial "entry/meta/author" . }}
+  {{ partial "entry/meta/reading-time" . }}
+  
+  {{ if .Params.deprecated }}
+  <div class="deprecated">
+      {{- i18n "deprecatedPage" -}}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

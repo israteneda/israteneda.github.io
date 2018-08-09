@@ -1,0 +1,1 @@
+hugo server --baseURL=http://personal-profile-israteneda.c9users.io/ --bind=0.0.0.0 --port=8080
