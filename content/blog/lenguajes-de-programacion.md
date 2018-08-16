@@ -14,7 +14,6 @@ Actualmente los lenguajes más populares son JavaScript y Python, por todo lo qu
 
 JavaScript y Python son una buena elección, tienen grandes comunidades en internet y existen varios sitios que ofrecen recursos de aprendizaje gratuito como [FreeCodeCamp](https://www.freecodecamp.org/), [Python Programming](https://pythonprogramming.net/) o [Invent with Python](http://inventwithpython.com/).
 
-
 Pero también hay que tener en cuanta nuestro mercado por ejemplo en Ecuador los lenguajes de programación más usados en la web son PHP, .NET(C#) y Java. 
 
 ![](https://d2mxuefqeaa7sj.cloudfront.net/s_1F8D4738EB4A3A50E8F9C9A48BDE4157B6B14073BE25B92431A799C6DE06CFD4_1534444360895_estadisticas.JPG)
