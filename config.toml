@@ -1,4 +1,4 @@
-baseURL = "http://www.israteneda.com"
+baseURL = "https://www.israteneda.com"
 title = "Isra Teneda"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
@@ -6,7 +6,7 @@ copyright = ""
 theme = "engimo"
 
 disqusShortname = "israteneda"
-googleAnalytics = ""
+googleAnalytics = "UA-84771705-1"
 
 Paginate = 5
 preserveTaxonomyNames = true

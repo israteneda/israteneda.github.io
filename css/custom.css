@@ -35,3 +35,7 @@ ul {
 .list .item-title {
     margin-left: 1em;
 }
+
+.entry-content{
+    text-align: justify;
+}
