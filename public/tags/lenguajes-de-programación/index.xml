@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lenguajes de programación on Isra Teneda</title>
+    <link>https://www.israteneda.com/tags/lenguajes-de-programaci%C3%B3n/</link>
+    <description>Recent content in lenguajes de programación on Isra Teneda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 09 Aug 2018 20:31:28 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.israteneda.com/tags/lenguajes-de-programaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Qué lenguaje de programación aprender primero para desarrollo web</title>
+      <link>https://www.israteneda.com/blog/lenguajes-de-programacion/</link>
+      <pubDate>Thu, 09 Aug 2018 20:31:28 +0000</pubDate>
+      
+      <guid>https://www.israteneda.com/blog/lenguajes-de-programacion/</guid>
+      <description>Existe una multitud de lenguajes para elegir: JavaScript, Python, Ruby, PHP, Elixir, Go entre otros. Pero ¿Cuál escoger primero?
+Actualmente los lenguajes más populares son JavaScript y Python, por todo lo que permiten realizar, JavaScript permite crear aplicaciones web, móviles y de escritorio, se puede usar para internet de las cosas, juegos y para programación de robots. De igual forma Python permite programar aplicaciones web y de escritorio, crear scripts de seguridad, además es usado por administradores de sistemas para automatizar tareas y en el área académica para ciencia de datos e inteligencia artificial también se pueden construir herramientas para la terminal, robots y juegos.</description>
+    </item>
+    
+  </channel>
+</rss>

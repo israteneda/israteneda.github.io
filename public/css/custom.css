@@ -1,0 +1,37 @@
+.sidebar{
+    text-align: center;
+}
+
+.sidebar .sep-after:after{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.logo{
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.logo img {
+    border-radius: 50%;
+}
+
+.has-sidebar .main {
+    float: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.sep-after:after, .sep-before:before {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.list .item-title {
+    margin-left: 1em;
+}
