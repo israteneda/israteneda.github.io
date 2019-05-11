@@ -3,8 +3,8 @@ title: "Qué lenguaje de programación aprender primero para desarrollo web"
 date: 2018-08-09T20:31:28Z
 draft: false
 tags: 
-    - desarrollo web
-    - lenguajes de programación
+    - Desarrollo web
+    - Lenguajes de programación
 ---
 
 Existe una multitud de lenguajes para elegir: JavaScript, Python, Ruby, PHP,
