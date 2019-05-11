@@ -14,17 +14,6 @@
   </url>
   
   <url>
-    <loc>https://www.israteneda.com/blog/lenguajes-de-programacion/</loc>
-    <lastmod>2018-08-09T20:31:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.israteneda.com/tags/</loc>
-    <lastmod>2018-08-09T20:31:28+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.israteneda.com/tags/desarrollo-web/</loc>
     <lastmod>2018-08-09T20:31:28+00:00</lastmod>
     <priority>0</priority>
@@ -32,6 +21,17 @@
   
   <url>
     <loc>https://www.israteneda.com/tags/lenguajes-de-programaci%C3%B3n/</loc>
+    <lastmod>2018-08-09T20:31:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.israteneda.com/blog/lenguajes-de-programacion/</loc>
+    <lastmod>2018-08-09T20:31:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.israteneda.com/tags/</loc>
     <lastmod>2018-08-09T20:31:28+00:00</lastmod>
     <priority>0</priority>
   </url>
