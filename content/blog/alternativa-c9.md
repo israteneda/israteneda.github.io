@@ -43,21 +43,21 @@ un entorno de desarrollo local.
 
 Ventajas:
 
-* Puedes desarrollar desde cualquier lugar lo que para mi representa libertad de movimiento ya que muchas veces no llevas tu computadora contigo, con un IDE en línea puedes abrir tu proyecto desde cualquier computadora que encuentres.
-* Te brinda una IP pública por lo que puedes compartir tu trabajo con alguien más, por ejemplo si algún cliente te pide que realices una página web tu puedes desarrollarla en el IDE en línea y mostrarlo a tu cliente remotamente sin necesidad de comprar un dominio y configurarlo.
+* Puedes desarrollar desde cualquier lugar lo que para mi representa libertad de movimiento ya que muchas veces no llevas tu computadora contigo, con un IDE en línea puedes abrir tu proyecto desde cualquier computadora.
+* Te brinda una IP pública estática por lo que puedes compartir tu trabajo con alguien más, por ejemplo si algún cliente te pide que realices una página web tu puedes desarrollarla en el IDE en línea y mostrarlo a tu cliente remotamente sin necesidad de comprar un dominio y configurarlo.
 * Te brinda un entorno de trabajo remoto no se limita solo al IDE o al editor de código te brinda una instancia de Linux con lo que puedes instalar todo lo que necesites y si como yo usas Windows siempre es bueno poder tener una máquina con linux para desarrollar.
 
 También existen algunas desventajas de un IDE en línea.
 
 Desventajas:
 
-* Necesitas una conexión a internet por lo que sin no cuentas con una no podrás avanzar en tu proyecto.
+* Necesitas una conexión a internet por lo que sino cuentas con una no podrás avanzar en tu proyecto.
 * Capacidad limitada a diferencia de un entorno de desarrollo local donde básicamente puedes usar toda la capacidad de tu computador.
 
 Y ahora que IDE en línea usar si C9 se pasa a AWS donde debemos pagar y
-configurar manualmente la IP pública a diferencia del anterior servicio de C9 que nos proveía una IP estática.
+configurar manualmente la IP estática a diferencia del anterior servicio de C9 que nos proveía una IP estática por defecto.
 
-Existen varias alternativas para C9, como lo son Codeanywhere, Koding, Eclipse Che, entre otros.
+Existen varias alternativas para C9, como Codeanywhere, Koding, Eclipse Che, entre otros.
 Aunque son bastante buenos ninguno nos ofrece la facilidad de uso y las funcionalidades de C9.
 Recientemente Microsoft anuncio Visual Studio Online, a pesar de ser una gran iniciativa este
 editor de código, no es un entorno de trabajo completo
@@ -65,14 +65,14 @@ sino más bien se asemeja a la edición de código que implementa GitLab, aunque
 el futuro podamos contar con entornos de desarrollo completos.
 
 Y hasta eso qué? Existe una gran alternativa llamada goormIDE desarrollada por la empresa
-Coreana Goorm, este IDE se asemeja mucho a C9 y es la perfecta alternativa para C9 ya que
+Coreana Goorm, este IDE es la perfecta alternativa para C9 ya que
 nos ofrece todas sus ventajas: varios entornos de desarrollo, una capa gratuita, además nos
-permite colaborar con otros desarrolladores en tiempo real y una IP pública para compartir
+permite colaborar con otros desarrolladores en tiempo real y una IP pública estática para compartir
 nuestros proyectos.
 
 ![](https://paper-attachments.dropbox.com/s_A2575D6F4C8C61CBDE0D7E83B9A422C78DC9528D78D4A1DBAC773AA6A37157AF_1558031446055_goormide.png)
 
-Y como empiezo? Ingresa a la página de goormIDE y registrate una vez que registrado
-debes llenar un formulario mencionando para qué vas a usar tu cuenta de goormIDE, cuando se apruebe tu solicitud que en promedio se demora 24h
+Y como empiezo? Ingresa a la página de goormIDE y registrate una vez registrado
+debes llenar un formulario mencionando para qué vas a usar los espacios de trabajo de goormIDE, cuando se apruebe tu solicitud que en promedio se demora 24h
 puedes comenzar a crear ambientes de desarrollo, y disfrutar de todos los beneficios que
 te ofrece un IDE en línea.
