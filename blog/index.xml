@@ -5,10 +5,20 @@
     <link>https://www.israteneda.com/blog/</link>
     <description>Recent content in Blogs on Isra Teneda Log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Aug 2018 20:31:28 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2019 10:48:18 -0500</lastBuildDate>
     
 	<atom:link href="https://www.israteneda.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cuál es la mejor alternativa para Cloud9 IDE</title>
+      <link>https://www.israteneda.com/blog/alternativa-c9/</link>
+      <pubDate>Sat, 11 May 2019 10:48:18 -0500</pubDate>
+      
+      <guid>https://www.israteneda.com/blog/alternativa-c9/</guid>
+      <description>En la actualidad existe una gran variedad de herramientas de programación tanto para diseño, desarrollo, pruebas, versionamiento, etc. El día de hoy vamos a hablar sobre editores de código e IDEs, herramientas de desarrollo que nos permiten escribir aplicaciones.
+Podemos encontrar varios editores de código bastante populares como Visual Studio Code, Sublime Text, Atom, Vim/Neovim, entre otros. Inclusive existen entornos integrados de desarrollo que nos ofrecen mayores funcionalidades como autocompletado, debugging, etc.</description>
+    </item>
     
     <item>
       <title>Qué lenguaje de programación aprender primero para desarrollo web</title>
