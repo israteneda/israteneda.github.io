@@ -23,7 +23,7 @@ Todas estas herramientas las usamos en nuestro entorno de trabajo local es decir
 nuestro computador. Pero en los últimos años se han desarrollando varias
 iniciativas para que estos editores de código e IDEs migren a la "nube" uno de estos
 IDEs en línea es Cloud9 (C9) que fue creado en 2010 y adquirido en 2016 por Amazon. C9
-es una de los mejores IDEs en línea, este IDE
+es uno de los mejores IDEs en línea, este IDE
 nos permitía tener entornos de trabajo remotos que contaban con 2GB de almacenamiento y
 hasta 1GB de memoria RAM bajo la capa gratuita, lo que era suficiente para realizar
 desarrollo de aplicaciones pequeñas y medianas, además de brindarnos una IP pública
