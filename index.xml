@@ -5,10 +5,20 @@
     <link>https://www.israteneda.com/</link>
     <description>Recent content in Home on Isra Teneda Log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 11 May 2019 10:48:18 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2020 13:59:55 -0500</lastBuildDate>
     
 	<atom:link href="https://www.israteneda.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Desarrollo móvil nativo vs híbrido</title>
+      <link>https://www.israteneda.com/blog/mobil-native-vs-hybrid/</link>
+      <pubDate>Sun, 01 Mar 2020 13:59:55 -0500</pubDate>
+      
+      <guid>https://www.israteneda.com/blog/mobil-native-vs-hybrid/</guid>
+      <description>En esta entrada analizaremos si es más conveniente desarrollar aplicaciones nativas (Android/iOS nativo) o aplicaciones híbridas (Ionic, Xamarin, Flutter). Este es un tema que se ha venido discutiendo desde hace mucho tiempo y cada forma de desarrollo presenta sus ventajas y desventajas.
+Hoy en día es crucial contar con una aplicación móvil, incluso hay negocios que se basa en una, como es el caso de Uber, Spotify, WhatsApp e Instagram. En el 2017 el 57% del tráfico de internet provenía de búsquedas de dispositivos móviles según BrightEdge, es decir, las búsquedas en móvil representan la mitad de las búsquedas globales.</description>
+    </item>
     
     <item>
       <title>Cuál es la mejor alternativa para Cloud9 IDE</title>
