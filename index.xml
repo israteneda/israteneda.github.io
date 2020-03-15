@@ -5,10 +5,22 @@
     <link>https://www.israteneda.com/</link>
     <description>Recent content in Home on Isra Teneda Log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 Mar 2020 13:59:55 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2020 20:15:07 -0500</lastBuildDate>
     
 	<atom:link href="https://www.israteneda.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Color Picker en Android (Kotlin/Java)</title>
+      <link>https://www.israteneda.com/blog/color_picker_android/</link>
+      <pubDate>Sat, 14 Mar 2020 20:15:07 -0500</pubDate>
+      
+      <guid>https://www.israteneda.com/blog/color_picker_android/</guid>
+      <description>Hola a todos, en esta entrada vamos a crear un Color Picker en Android usando la librería ColorSheet creada por Sasikanth.
+Comenzamos creando el proyecto, en este caso le pondré el nombre de Color Picker
+Hay que tener en cuenta que para utilizar esta librería la versión mínima del sdk debe ser la versión 21.
+defaultConfig {applicationId &amp;#34;com.example.colorpicker&amp;#34;minSdkVersion 21targetSdkVersion 29versionCode 1versionName &amp;#34;1.0&amp;#34;...}Tanto para Java como para Kotlin debemos agregar las dependencias de ColorSheet y Material Design en build.</description>
+    </item>
     
     <item>
       <title>Desarrollo móvil nativo vs híbrido</title>
