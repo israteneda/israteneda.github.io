@@ -5,27 +5,27 @@
     <link>https://www.israteneda.com/tags/desarrollo-m%C3%B3vil/</link>
     <description>Recent content in Desarrollo móvil on Isra Teneda Log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 14 Mar 2020 20:15:07 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2020 14:58:17 -0500</lastBuildDate>
     
 	<atom:link href="https://www.israteneda.com/tags/desarrollo-m%C3%B3vil/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Color Picker en Android (Kotlin/Java)</title>
-      <link>https://www.israteneda.com/blog/color_picker_android/</link>
-      <pubDate>Sat, 14 Mar 2020 20:15:07 -0500</pubDate>
+      <link>https://www.israteneda.com/blog/color-picker-android/</link>
+      <pubDate>Sat, 14 Mar 2020 14:58:17 -0500</pubDate>
       
-      <guid>https://www.israteneda.com/blog/color_picker_android/</guid>
+      <guid>https://www.israteneda.com/blog/color-picker-android/</guid>
       <description>Hola a todos, en esta entrada vamos a crear un Color Picker en Android usando la librería ColorSheet creada por Sasikanth.
 Comenzamos creando el proyecto, en este caso le pondré el nombre de Color Picker
 Hay que tener en cuenta que para utilizar esta librería la versión mínima del sdk debe ser la versión 21.
-defaultConfig {applicationId &amp;#34;com.example.colorpicker&amp;#34;minSdkVersion 21targetSdkVersion 29versionCode 1versionName &amp;#34;1.0&amp;#34;...}Tanto para Java como para Kotlin debemos agregar las dependencias de ColorSheet y Material Design en build.</description>
+defaultConfig { applicationId &amp;#34;com.example.colorpicker&amp;#34; minSdkVersion 21 targetSdkVersion 29 versionCode 1 versionName &amp;#34;1.0&amp;#34; ... } Tanto para Java como para Kotlin debemos agregar las dependencias de ColorSheet y Material Design en build.</description>
     </item>
     
     <item>
       <title>Desarrollo móvil nativo vs híbrido</title>
       <link>https://www.israteneda.com/blog/mobil-native-vs-hybrid/</link>
-      <pubDate>Sun, 01 Mar 2020 13:59:55 -0500</pubDate>
+      <pubDate>Sun, 01 Mar 2020 15:26:09 -0500</pubDate>
       
       <guid>https://www.israteneda.com/blog/mobil-native-vs-hybrid/</guid>
       <description>En esta entrada analizaremos si es más conveniente desarrollar aplicaciones nativas (Android/iOS nativo) o aplicaciones híbridas (Ionic, Xamarin, Flutter). Este es un tema que se ha venido discutiendo desde hace mucho tiempo y cada forma de desarrollo presenta sus ventajas y desventajas.

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Hola a todos, en esta entrada vamos a crear un Color Picker en Android usando la librería ColorSheet creada por Sasikanth.
+Comenzamos creando el proyecto, en este caso le pondré el nombre de Color Picker
+Hay que tener en cuenta que para utilizar esta librería la versión mínima del sdk debe ser la versión 21.
+defaultConfig { applicationId &#34;com.example.colorpicker&#34; minSdkVersion 21 targetSdkVersion 29 versionCode 1 versionName &#34;1.0&#34; ... } Tanto para Java como para Kotlin debemos agregar las dependencias de ColorSheet y Material Design en build.'>
+<meta name='theme-color' content='#17a2b8'>
+
+<meta property='og:title' content='Color Picker en Android (Kotlin/Java) • Isra Teneda Log'>
+<meta property='og:description' content='Hola a todos, en esta entrada vamos a crear un Color Picker en Android usando la librería ColorSheet creada por Sasikanth.
+Comenzamos creando el proyecto, en este caso le pondré el nombre de Color Picker
+Hay que tener en cuenta que para utilizar esta librería la versión mínima del sdk debe ser la versión 21.
+defaultConfig { applicationId &#34;com.example.colorpicker&#34; minSdkVersion 21 targetSdkVersion 29 versionCode 1 versionName &#34;1.0&#34; ... } Tanto para Java como para Kotlin debemos agregar las dependencias de ColorSheet y Material Design en build.'>
+<meta property='og:url' content='https://www.israteneda.com/blog/color-picker-android/'>
+<meta property='og:site_name' content='Isra Teneda Log'>
+<meta property='og:type' content='article'><meta property='article:section' content='Blog'><meta property='article:tag' content='Desarrollo móvil'><meta property='article:tag' content='Android'><meta property='article:published_time' content='2020-03-14T14:58:17-05:00'/><meta property='article:modified_time' content='2020-03-14T14:58:17-05:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@israteneda'>
+
+<meta name="generator" content="Hugo 0.69.2" />
+
+  <title>Color Picker en Android (Kotlin/Java) • Isra Teneda Log</title>
+  <link rel='canonical' href='https://www.israteneda.com/blog/color-picker-android/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.809149b6.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#17a2b8;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-84771705-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+
+
+<body class='page type-blog has-sidebar'>
+
+  <div class='site'>
+
+    <div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Saltar al menú principal</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/profile.jpg'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+    Isra Teneda Log
+    </h2>
+    
+    <div class='desc sep-after'>
+    Estudiante Ingeniería de Software
+    </div>
+    
+    <div class="sep-after">
+      <ul>
+      
+        <li>Blog sobre Desarrollo de Software 👨‍💻📱🚀</li>
+      
+      </ul>
+    </div>
+    
+    <div>
+      <p><strong>Proyectos</strong></p>
+      
+      <ul>
+        
+          <li><a href="https://nbviewer.jupyter.org/github/israteneda/israteneda.github.io/blob/master/cv.pdf" target="_blank">⚡ CV</a></li>
+        
+          <li><a href="https://chrome.google.com/webstore/detail/espe-links/faomillagmdhkelccnehknfcabeelcpg" target="_blank">⚡ Extensión Espe Links</a></li>
+        
+          <li><a href="https://israteneda.com/random-quote/" target="_blank">⚡ Generador de Frases</a></li>
+        
+          <li><a href="https://israteneda.com/calculator/" target="_blank">⚡ Calculadora</a></li>
+        
+      </ul>
+    </div>
+    
+  </header>
+
+</section>
+<section class='widget widget-social_menu sep-after'><nav aria-label='Menú social'>
+    <ul><li>
+        <a href='https://github.com/israteneda' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Abrir cuenta de Github en una nueva pestaña</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/israteneda' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Abrir cuenta de Twitter en una nueva pestaña</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://instagram.com/israteneda' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Abrir cuenta de Instagram en una nueva pestaña</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:israteneda@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contacto vía correo</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://www.youtube.com/channel/UCwebj3UxpFP1hCgje16QxiQ' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Abrir cuenta de Youtube en una nueva pestaña</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section></div>
+
+  <div class='sidebar-overlay'></div>
+</div>
+
+    <div class='main'>
+
+      <a class='screen-reader-text' href='#content'>Saltar al contenido</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Alternar barra lateral</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+
+      <header id='header' class='header site-header'>
+        
+        
+        
+        
+        
+        
+        
+        
+      </header>
+
+      <main id='content'>
+
+
+<article lang='es' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Color Picker en Android (Kotlin/Java)</h1>
+      
+
+    </div>
+    
+<div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posteado en </span>
+  <time class='entry-date' datetime='2020-03-14T14:58:17-05:00'>
+    14 de Marzo del 2020
+  </time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+3 minutos de lectura
+</span>
+
+
+  
+  
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p><img src="https://media.giphy.com/media/SRqUihSSQEpQrArjFL/giphy.gif" alt=""></p>
+<p>Hola a todos, en esta entrada vamos a crear un Color Picker en Android usando la librería <a href="https://github.com/msasikanth/ColorSheet">ColorSheet</a> creada por <a href="https://github.com/msasikanth">Sasikanth</a>.</p>
+<p>Comenzamos creando el proyecto, en este caso le pondré el nombre de <strong>Color Picker</strong></p>
+<p><img src="https://i.imgur.com/jLK8XQU.png" alt=""></p>
+<p>Hay que tener en cuenta que para utilizar esta librería la versión mínima del sdk debe ser la versión 21.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">defaultConfig <span style="color:#f92672">{</span>
+    applicationId <span style="color:#e6db74">&#34;com.example.colorpicker&#34;</span>
+    minSdkVersion <span style="color:#ae81ff">21</span>
+    targetSdkVersion <span style="color:#ae81ff">29</span>
+    versionCode <span style="color:#ae81ff">1</span>
+    versionName <span style="color:#e6db74">&#34;1.0&#34;</span>
+    
+    <span style="color:#f92672">...</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Tanto para Java como para Kotlin debemos agregar las dependencias de ColorSheet y Material Design en <code>build.gradle (Module:app).</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="color:#f92672">{</span>
+    <span style="color:#f92672">...</span>
+
+    <span style="color:#75715e">// ColorSheet
+</span><span style="color:#75715e"></span>    implementation <span style="color:#e6db74">&#34;dev.sasikanth:colorsheet:1.0.1&#34;</span>
+
+    <span style="color:#75715e">// Material Design
+</span><span style="color:#75715e"></span>    implementation <span style="color:#e6db74">&#39;com.google.android.material:material:1.1.0&#39;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Una vez hemos añadido las dependencias y sincronizado el proyecto debemos cambiar el tema por defecto de la aplicación por un tema de Material Design:</p>
+<p>De AppCompat:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Base application theme. --&gt;</span>
+    <span style="color:#f92672">&lt;style</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;AppTheme&#34;</span> <span style="color:#a6e22e">parent=</span><span style="color:#e6db74">&#34;Theme.AppCompat.Light.DarkActionBar&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#75715e">&lt;!-- Customize your theme here. --&gt;</span>
+        ...
+    <span style="color:#f92672">&lt;/style&gt;</span>
+</code></pre></div><p>A MaterialComponents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Base application theme. --&gt;</span>
+    <span style="color:#f92672">&lt;style</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;AppTheme&#34;</span> <span style="color:#a6e22e">parent=</span><span style="color:#e6db74">&#34;Theme.MaterialComponents.Light.NoActionBar&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#75715e">&lt;!-- Customize your theme here. --&gt;</span>
+        ...
+    <span style="color:#f92672">&lt;/style&gt;</span>
+</code></pre></div><p>Ahora crearemos los siguientes elementos en <code>activity_main.xml</code>:</p>
+<p>• <code>ConstraintLayout</code> con el id <code>layout_container</code>
+• <code>Button</code> con el id <code>btn_color_picker</code></p>
+<p><img src="https://i.imgur.com/5AEJX54.png" alt=""></p>
+<p>Añadimos un array de colores en <code>colors.xml</code> dentro de la carpeta <code>values</code> del proyecto.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;array</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;colors&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;item&gt;</span>#F44336<span style="color:#f92672">&lt;/item&gt;</span>
+    <span style="color:#f92672">&lt;item&gt;</span>#E91E63<span style="color:#f92672">&lt;/item&gt;</span>
+    <span style="color:#f92672">&lt;item&gt;</span>#3F51B5<span style="color:#f92672">&lt;/item&gt;</span>
+    <span style="color:#f92672">&lt;item&gt;</span>#1E88E5<span style="color:#f92672">&lt;/item&gt;</span>
+    <span style="color:#f92672">&lt;item&gt;</span>#F4511E<span style="color:#f92672">&lt;/item&gt;</span>
+    <span style="color:#f92672">&lt;item&gt;</span>#546E7A<span style="color:#f92672">&lt;/item&gt;</span>
+    <span style="color:#f92672">&lt;item&gt;</span>#43A047<span style="color:#f92672">&lt;/item&gt;</span>
+<span style="color:#f92672">&lt;/array&gt;</span>
+</code></pre></div><p>Si deseamos cambiar el texto que se despliega en el Color Picker, podemos añadir el siguiente código a <code>strings.xml</code> en la carpeta <code>values</code> del proyecto.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;resources&gt;</span>
+    <span style="color:#f92672">&lt;string</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;app_name&#34;</span><span style="color:#f92672">&gt;</span>Color Picker<span style="color:#f92672">&lt;/string&gt;</span>
+
+    <span style="color:#75715e">&lt;!-- ColorSheet --&gt;</span>
+    <span style="color:#f92672">&lt;string</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;pick_a_color&#34;</span><span style="color:#f92672">&gt;</span>Selecciona un color<span style="color:#f92672">&lt;/string&gt;</span>
+<span style="color:#f92672">&lt;/resources&gt;</span>
+</code></pre></div><p>Una vez tenemos listo nuestras dependecias, la vista y los colores, vamos con el código.</p>
+<h2 id="java">Java</h2>
+<p>Para Java añadiremos una dependecia más, ya que la libraría esta escrita en Kotlin necesitamos una interfaz llamada <code>Function1</code> para que el código pueda correr con Java, recordemos que Java y Kotlin son interoperables.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">dependencies <span style="color:#f92672">{</span>
+    <span style="color:#f92672">...</span>
+
+    <span style="color:#75715e">// ColorSheet
+</span><span style="color:#75715e"></span>    implementation <span style="color:#e6db74">&#34;dev.sasikanth:colorsheet:1.0.1&#34;</span>
+
+    <span style="color:#75715e">// Material Design
+</span><span style="color:#75715e"></span>    implementation <span style="color:#e6db74">&#39;com.google.android.material:material:1.1.0&#39;</span>
+
+    <span style="color:#75715e">// Kotlin
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">def</span> kotlin_version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1.3.61&#39;</span>
+    implementation <span style="color:#e6db74">&#34;org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version&#34;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Ahora si vamos con el código de <code>MainActivity.java</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#66d9ef">extends</span> AppCompatActivity <span style="color:#f92672">{</span>
+
+    ConstraintLayout container<span style="color:#f92672">;</span>
+    Button colorPicker<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Integer selectedColor <span style="color:#f92672">=</span> ColorSheet<span style="color:#f92672">.</span><span style="color:#a6e22e">NO_COLOR</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Boolean noColorOption <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">);</span>
+        setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">);</span>
+
+        container <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout_container</span><span style="color:#f92672">);</span>
+        colorPicker <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">btn_color_picker</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">final</span> ColorSheet colorSheet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ColorSheet<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> colors <span style="color:#f92672">=</span> getResources<span style="color:#f92672">().</span><span style="color:#a6e22e">getIntArray</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">array</span><span style="color:#f92672">.</span><span style="color:#a6e22e">colors</span><span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">final</span> Function1 listener <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Function1<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">invoke</span><span style="color:#f92672">(</span>Object var1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">invoke</span><span style="color:#f92672">(((</span>Number<span style="color:#f92672">)</span>var1<span style="color:#f92672">).</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">());</span>
+                <span style="color:#66d9ef">return</span> Unit<span style="color:#f92672">.</span><span style="color:#a6e22e">INSTANCE</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">invoke</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> color<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                container<span style="color:#f92672">.</span><span style="color:#a6e22e">setBackgroundColor</span><span style="color:#f92672">(</span>color<span style="color:#f92672">);</span>
+                Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span>MainActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Color: &#34;</span> <span style="color:#f92672">+</span> color<span style="color:#f92672">,</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">});</span>
+
+        colorPicker<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> View<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>View v<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                colorSheet<span style="color:#f92672">.</span><span style="color:#a6e22e">cornerRadius</span><span style="color:#f92672">(</span>8<span style="color:#f92672">);</span>
+                colorSheet<span style="color:#f92672">.</span><span style="color:#a6e22e">colorPicker</span><span style="color:#f92672">(</span>colors<span style="color:#f92672">,</span> selectedColor<span style="color:#f92672">,</span> noColorOption<span style="color:#f92672">,</span> listener<span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span>getSupportFragmentManager<span style="color:#f92672">());</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">});</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="kotlin">Kotlin</h2>
+<p><code>MainActivity.kt</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#f92672">:</span> AppCompatActivity<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+    companion object <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> val COLOR_SELECTED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;selectedColor&#34;</span>
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> val NO_COLOR_OPTION <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;noColorOption&#34;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> var selectedColor<span style="color:#f92672">:</span> Int <span style="color:#f92672">=</span> ColorSheet<span style="color:#f92672">.</span><span style="color:#a6e22e">NO_COLOR</span>
+    <span style="color:#66d9ef">private</span> var noColorOption <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+
+    override fun <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">:</span> Bundle<span style="color:#f92672">?)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">)</span>
+        setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">)</span>
+
+        val container<span style="color:#f92672">:</span>ConstraintLayout <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout_container</span><span style="color:#f92672">)</span>
+        val colorPicker<span style="color:#f92672">:</span> Button <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">btn_color_picker</span><span style="color:#f92672">)</span>
+        val colors <span style="color:#f92672">=</span> resources<span style="color:#f92672">.</span><span style="color:#a6e22e">getIntArray</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">array</span><span style="color:#f92672">.</span><span style="color:#a6e22e">colors</span><span style="color:#f92672">)</span>
+
+        selectedColor <span style="color:#f92672">=</span> savedInstanceState<span style="color:#f92672">?.</span><span style="color:#a6e22e">getInt</span><span style="color:#f92672">(</span>COLOR_SELECTED<span style="color:#f92672">)</span> <span style="color:#f92672">?:</span> colors<span style="color:#f92672">.</span><span style="color:#a6e22e">first</span><span style="color:#f92672">()</span>
+
+        noColorOption <span style="color:#f92672">=</span> savedInstanceState<span style="color:#f92672">?.</span><span style="color:#a6e22e">getBoolean</span><span style="color:#f92672">(</span>NO_COLOR_OPTION<span style="color:#f92672">)</span> <span style="color:#f92672">?:</span> <span style="color:#66d9ef">false</span>
+
+        colorPicker<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span> <span style="color:#f92672">{</span>
+            ColorSheet<span style="color:#f92672">().</span><span style="color:#a6e22e">cornerRadius</span><span style="color:#f92672">(</span>8<span style="color:#f92672">)</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">colorPicker</span><span style="color:#f92672">(</span>
+                            colors <span style="color:#f92672">=</span> colors<span style="color:#f92672">,</span>
+                            noColorOption <span style="color:#f92672">=</span> noColorOption<span style="color:#f92672">,</span>
+                            selectedColor <span style="color:#f92672">=</span> selectedColor<span style="color:#f92672">,</span>
+                            listener <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> color <span style="color:#f92672">-&gt;</span>
+                                selectedColor <span style="color:#f92672">=</span> color
+                                container<span style="color:#f92672">.</span><span style="color:#a6e22e">setBackgroundColor</span><span style="color:#f92672">(</span>color<span style="color:#f92672">)</span>
+                                Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> selectedColor<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(),</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">()</span>
+                            <span style="color:#f92672">})</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span>supportFragmentManager<span style="color:#f92672">)</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Para el tutorial se utilizaron las siguientes herramientas:</p>
+<pre><code>Android Studio 3.6.1
+Gradle 5.6.4
+</code></pre>
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  <div class='tags'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Etiquetas: </span><a class='tag' href='/tags/desarrollo-m%C3%B3vil'>Desarrollo móvil</a>, <a class='tag' href='/tags/android'>Android</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/blog/mobil-native-vs-hybrid/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Anterior</span>
+        <span class='screen-reader-text'>Anterior entrada: </span>Desarrollo móvil nativo vs híbrido</a>
+    </div></div>
+</nav>
+
+
+<section id='comments' class='comments'>
+  <div class='container sep-before'>
+    <div class='comments-area'><div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "israteneda" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  </div>
+</section>
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p> &copy; 2018-2020 Isra Teneda </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__public_path__='https:\/\/www.israteneda.com\/assets\/js\/'</script>
+
+<script src='https://www.israteneda.com/assets/js/main.68cb493a.js'></script><script src='/js/custom.js'></script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
