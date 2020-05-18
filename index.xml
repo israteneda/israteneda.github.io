@@ -5,10 +5,24 @@
     <link>https://www.israteneda.com/</link>
     <description>Recent content in Home on Isra Teneda Log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 14 Mar 2020 14:58:17 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 21:37:17 -0500</lastBuildDate>
     
 	<atom:link href="https://www.israteneda.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sitios estáticos usar Gatsby o Nextjs</title>
+      <link>https://www.israteneda.com/blog/gatsby-vs-nextjs/</link>
+      <pubDate>Sun, 17 May 2020 21:37:17 -0500</pubDate>
+      
+      <guid>https://www.israteneda.com/blog/gatsby-vs-nextjs/</guid>
+      <description>Al momento de desarrollar un sitio estático tenemos una infinidad de posibilidades.
+Pero ¿Porqué desarrollar un sitio estático? Bueno un sitio estático tiene varios beneficios:
+• Costo
+• Mantenimiento
+• Facilidad de configuración
+Costo: Este blog se mantiene con $12 al año lo que es una cantidad interesante para mantener un sitio web 24/7. Y el costo del sitio viene de parte del nombre de dominio no del sitio en sí.</description>
+    </item>
     
     <item>
       <title>Color Picker en Android (Kotlin/Java)</title>

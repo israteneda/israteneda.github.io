@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Al momento de desarrollar un sitio estático tenemos una infinidad de posibilidades.
+Pero ¿Porqué desarrollar un sitio estático? Bueno un sitio estático tiene varios beneficios:
+• Costo
+• Mantenimiento
+• Facilidad de configuración
+Costo: Este blog se mantiene con $12 al año lo que es una cantidad interesante para mantener un sitio web 24/7. Y el costo del sitio viene de parte del nombre de dominio no del sitio en sí.'>
+<meta name='theme-color' content='#17a2b8'>
+
+<meta property='og:title' content='Sitios estáticos usar Gatsby o Nextjs • Isra Teneda Log'>
+<meta property='og:description' content='Al momento de desarrollar un sitio estático tenemos una infinidad de posibilidades.
+Pero ¿Porqué desarrollar un sitio estático? Bueno un sitio estático tiene varios beneficios:
+• Costo
+• Mantenimiento
+• Facilidad de configuración
+Costo: Este blog se mantiene con $12 al año lo que es una cantidad interesante para mantener un sitio web 24/7. Y el costo del sitio viene de parte del nombre de dominio no del sitio en sí.'>
+<meta property='og:url' content='https://www.israteneda.com/blog/gatsby-vs-nextjs/'>
+<meta property='og:site_name' content='Isra Teneda Log'>
+<meta property='og:type' content='article'><meta property='article:section' content='Blog'><meta property='article:published_time' content='2020-05-17T21:37:17-05:00'/><meta property='article:modified_time' content='2020-05-17T21:37:17-05:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@israteneda'>
+
+<meta name="generator" content="Hugo 0.69.2" />
+
+  <title>Sitios estáticos usar Gatsby o Nextjs • Isra Teneda Log</title>
+  <link rel='canonical' href='https://www.israteneda.com/blog/gatsby-vs-nextjs/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.809149b6.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#17a2b8;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-84771705-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+
+
+<body class='page type-blog has-sidebar'>
+
+  <div class='site'>
+
+    <div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Saltar al menú principal</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/profile.jpg'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+    Isra Teneda Log
+    </h2>
+    
+    <div class='desc sep-after'>
+    Estudiante Ingeniería de Software
+    </div>
+    
+    <div class="sep-after">
+      <ul>
+      
+        <li>Blog sobre Desarrollo de Software 👨‍💻📱🚀</li>
+      
+      </ul>
+    </div>
+    
+    <div>
+      <p><strong>Proyectos</strong></p>
+      
+      <ul>
+        
+          <li><a href="https://nbviewer.jupyter.org/github/israteneda/israteneda.github.io/blob/master/cv.pdf" target="_blank">⚡ CV</a></li>
+        
+          <li><a href="https://chrome.google.com/webstore/detail/espe-links/faomillagmdhkelccnehknfcabeelcpg" target="_blank">⚡ Extensión Espe Links</a></li>
+        
+          <li><a href="https://israteneda.com/random-quote/" target="_blank">⚡ Generador de Frases</a></li>
+        
+          <li><a href="https://israteneda.com/calculator/" target="_blank">⚡ Calculadora</a></li>
+        
+      </ul>
+    </div>
+    
+  </header>
+
+</section>
+<section class='widget widget-social_menu sep-after'><nav aria-label='Menú social'>
+    <ul><li>
+        <a href='https://github.com/israteneda' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Abrir cuenta de Github en una nueva pestaña</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/israteneda' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Abrir cuenta de Twitter en una nueva pestaña</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://instagram.com/israteneda' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Abrir cuenta de Instagram en una nueva pestaña</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:israteneda@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contacto vía correo</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://www.youtube.com/channel/UCwebj3UxpFP1hCgje16QxiQ' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Abrir cuenta de Youtube en una nueva pestaña</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section></div>
+
+  <div class='sidebar-overlay'></div>
+</div>
+
+    <div class='main'>
+
+      <a class='screen-reader-text' href='#content'>Saltar al contenido</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Alternar barra lateral</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+
+      <header id='header' class='header site-header'>
+        
+        
+        
+        
+        
+        
+        
+        
+      </header>
+
+      <main id='content'>
+
+
+<article lang='es' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Sitios estáticos usar Gatsby o Nextjs</h1>
+      
+
+    </div>
+    
+<div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posteado en </span>
+  <time class='entry-date' datetime='2020-05-17T21:37:17-05:00'>
+    17 de Mayo del 2020
+  </time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+2 minutos de lectura
+</span>
+
+
+  
+  
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p>Al momento de desarrollar un sitio estático tenemos una <a href="https://www.staticgen.com/">infinidad</a> de posibilidades.</p>
+<p>Pero ¿Porqué desarrollar un sitio estático? Bueno un sitio estático tiene varios beneficios:</p>
+<p>• Costo</p>
+<p>• Mantenimiento</p>
+<p>• Facilidad de configuración</p>
+<p><strong>Costo:</strong> Este blog se mantiene con $12 al año lo que es una cantidad interesante para mantener un sitio web 24/7. Y el costo del sitio viene de parte del nombre de dominio no del sitio en sí.</p>
+<p><strong>Mantenimiento:</strong> Lo único que necesitamos para tener actualizado el sitio y tenerlo corriendo es un repositorio de github en donde se almacene el código.</p>
+<p><strong>Facilidad de configuración:</strong> Gracias a herramientas como <a href="https://www.netlify.com/">Netlify</a> el despliegue de un sitio estático no necesita tanta configuración.</p>
+<p>Ahora bien una vez conocemos las ventajas de un sitio estático, ¿Cúando no sería recomendable usar un sitio estático? Pues bueno en estos casos:</p>
+<p>• El contenenido cambia frecuentemente</p>
+<p>• Necesitamos manejar una lógica compleja</p>
+<p><strong>El contenenido cambia frecuentemente:</strong> Cuando tenemos una web que cambia constantemente por su giro de negocio no es una buena idea usar un generador de sitios estáticos, ya que para que nuestro sitio se actualice debemos compilarlo con cada cambio y eso representaría un tiempo de carga considerable.</p>
+<p><strong>Necesitamos manejar una lógica compleja:</strong> Cuando nuestro sitio ya pasa a ser más bien una aplicación web y ya no solo presentamos información al usuario.</p>
+<p>Ahora los mayores referentes para crear sitios estáticos con React son Gatsby y Nextjs cada uno tiene sus puntos fuertes, analizaremos cuál de estos es más recomendable usar.</p>
+<p>En cuanto a Nextjs es un framework de React que destaca por su característica de server side rendering es decir que la página se genera desde el servidor lo que mejora considerablemente el SEO. Entre sus features Netxjs permite generar sitios estáticos pero este no es su fin principal a diferencia de Gatsby.</p>
+<p>En cuanto al ecosistema Gatsby destaca como generador de sitios estáticos ya que tenemos mayores herramientas como <a href="https://www.gatsbyjs.org/starters/?v=2">starters</a> y varios <a href="https://www.gatsbyjs.org/plugins/">pulgins</a> que nos ayudan mientras desarrollamos, además muchas herramientas que trabajan con <a href="https://jamstack.org/">JAMstack</a> tienen compatibiidad con Gatsby antes que con Nextjs.</p>
+<p>Algo particular que encontre es que si deseamos colocar un sitio en un subdirectorio como <code>/blog</code>, en Gatsby podemos hacerlo con <a href="https://www.gatsbyjs.org/docs/path-prefix/">pathPrefix</a>, mientras que Nextjs esta feature no la encontre.</p>
+<p>En mi opinión creo que si deseamos realizar una página estática la mejor elección es Gatsby mientras que si necesitamos un framework para manejar un sin número de páginas web en nuestra aplicación web la elección correcta sería Nextjs.</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/blog/color-picker-android/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Anterior</span>
+        <span class='screen-reader-text'>Anterior entrada: </span>Color Picker en Android (Kotlin/Java)</a>
+    </div></div>
+</nav>
+
+
+<section id='comments' class='comments'>
+  <div class='container sep-before'>
+    <div class='comments-area'><div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "israteneda" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  </div>
+</section>
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p> &copy; 2018-2020 Isra Teneda </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__public_path__='https:\/\/www.israteneda.com\/assets\/js\/'</script>
+
+<script src='https://www.israteneda.com/assets/js/main.68cb493a.js'></script><script src='/js/custom.js'></script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
